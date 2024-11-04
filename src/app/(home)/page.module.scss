@@ -1,0 +1,22 @@
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.card {
+  height: 100px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
