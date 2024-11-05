@@ -4,13 +4,11 @@ import Image from 'next/image';
 import salad from '/public/dummy/salad.jpg';
 import search from '/public/search.png';
 
-import dummy01 from '/public/dummy/dummy01.jpg';
-
 export default function Section() {
-  const [isVisibleMain, setIsVisibleMain] = useState(false);
-  const [isVisibleContent, setIsVisibleContent] = useState(false);
+  const [isVisibleMain, setIsVisibleMain] = useState<boolean>(false);
+
+
   const mainSectionRef = useRef<HTMLDivElement | null>(null);
-  const contentSectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const mainObserver = new IntersectionObserver(
@@ -21,34 +19,18 @@ export default function Section() {
           setIsVisibleMain(false);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
-    const contentObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisibleContent(true);
-        } else {
-          setIsVisibleContent(false);
-        }
-      },
-      { threshold: 0.5 }
-    );
+
 
     if (mainSectionRef.current) {
       mainObserver.observe(mainSectionRef.current);
     }
 
-    if (contentSectionRef.current) {
-      contentObserver.observe(contentSectionRef.current);
-    }
-
     return () => {
       if (mainSectionRef.current) {
         mainObserver.unobserve(mainSectionRef.current);
-      }
-      if (contentSectionRef.current) {
-        contentObserver.unobserve(contentSectionRef.current);
       }
     };
   }, []);
@@ -80,42 +62,6 @@ export default function Section() {
         </div>
       </section>
 
-      <section
-        ref={contentSectionRef}
-        className={styles.section}
-        style={{ opacity: isVisibleContent ? 1 : 0 }}
-      >
-        <div className={styles.contentOverlay}>
-          <div>
-            <p>Recommend Recipe</p>
-            <h1>두 헬시의 추천 레시피를 만나보세요</h1>
-            <div className={styles.recipeContainer}>
-              <div className={styles.recipe}>
-                <Image
-                  src={dummy01}
-                  alt='dummyFood'
-                  width={200}
-                  height={200}
-                />
-              </div><div className={styles.recipe}>
-                <Image
-                  src={dummy01}
-                  alt='dummyFood'
-                  width={200}
-                  height={200}
-                />
-              </div><div className={styles.recipe}>
-                <Image
-                  src={dummy01}
-                  alt='dummyFood'
-                  width={200}
-                  height={200}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };

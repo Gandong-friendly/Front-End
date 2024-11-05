@@ -6,6 +6,7 @@ import dohealthy from '/public/dummy/DoHealthy.png';
 import Link from 'next/link';
 // import MainSection from '../../../components/MainSection';
 import Section from '../../../components/Section';
+import ContentsSection from '../../../components/\bContentsSection';
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         </div>
       </header>
       <Section />
+      <ContentsSection />
     </div>
   );
 }
