@@ -3,11 +3,12 @@ import styles from './Section.module.scss';
 import Image from 'next/image';
 import salad from '/public/dummy/salad.jpg';
 import search from '/public/search.png';
+import { useRouter } from 'next/navigation';
 
 export default function Section() {
   const [isVisibleMain, setIsVisibleMain] = useState<boolean>(false);
-
-
+  const [keyword, setKeyword] = useState<string>('');
+  const router = useRouter();
   const mainSectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -35,6 +36,12 @@ export default function Section() {
     };
   }, []);
 
+  const onSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (keyword !== '') {
+      router.push(`/menu/?menu=${keyword}`);
+    }
+  }
   return (
     <>
       <section ref={mainSectionRef} className={styles.mainSection}>
@@ -49,8 +56,16 @@ export default function Section() {
         <div className={styles.overlay} style={{ opacity: isVisibleMain ? 1 : 0 }}>
           <h1>Do Healthy</h1>
           <p>건강하고 맛있게</p>
-          <form className={styles.inputBox}>
-            <input type="text" placeholder='재료 입력' className={styles.input} />
+          <form
+            className={styles.inputBox}
+            onSubmit={onSearch}
+          >
+            <input type="text"
+              placeholder='음식, 재료 검색'
+              className={styles.input}
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+            />
             <Image
               src={search}
               alt='searchImage'
