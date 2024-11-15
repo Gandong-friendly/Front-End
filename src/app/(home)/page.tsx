@@ -2,8 +2,9 @@
 import React from 'react';
 import styles from './page.module.scss';
 import Section from '../../../components/Section';
-import ContentsSection from '../../../components/ContentsSection';
 import NavBar from '../../../components/NavBar';
+import RecommendRecipe from '../../../components/RecommendRecipe';
+import RecommendIngredients from '../../../components/RecommendIngredients';
 
 
 export default function Home() {
@@ -11,7 +12,8 @@ export default function Home() {
     <div className={styles.container}>
       <NavBar />
       <Section />
-      <ContentsSection />
+      <RecommendRecipe />
+      <RecommendIngredients />
       <footer className={styles.footer}>
         ㅇㅁㄴㅁㅇㄴ
       </footer>
