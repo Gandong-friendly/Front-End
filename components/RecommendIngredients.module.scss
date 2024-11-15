@@ -1,0 +1,37 @@
+.section{
+  position: relative;
+  width: 100dvw;
+  height: 50dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #f5f5f5;
+  color:#333;
+
+  transition: all 0.5s ease-in-out;
+}
+
+
+.ingredientsContainer{
+  width: inherit;
+  text-align: center;
+
+  h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  p{
+    font-size: 35px;
+  }
+}
+
+.ingredientsBox{
+  
+  width: inherit;
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
