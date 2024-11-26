@@ -1,0 +1,156 @@
+.container {
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #f4f4f4;
+}
+
+.recipe {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipeTitle {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+}
+
+.formSection {
+  margin-bottom: 20px;
+}
+
+.form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.fileInput {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.imagePreviewWrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.imagePreview {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.emptyImagePreview {
+  width: 300px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+}
+
+.deleteImageBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5733;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteImageBtn:hover {
+  background-color: #ff3b2b;
+}
+
+.categorySection {
+  margin-bottom: 20px;
+}
+
+.note {
+  font-size: 12px;
+  color: #888;
+}
+
+.ingredientRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ingredientInput {
+  flex: 1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.removeIngredientBtn {
+  background-color: #dc3545;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.removeIngredientBtn:hover {
+  background-color: #c82333;
+}
+
+.addIngredientBtn {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.addIngredientBtn:hover {
+  background-color: #218838;
+}
+
+.submitBtn {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: #0056b3;
+}
