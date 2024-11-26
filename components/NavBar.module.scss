@@ -28,16 +28,33 @@
 }
 
 // 드롭 다운
-.dropdown{
+.dropdown {
   position: absolute;
   right: 5%;
   width: 100px;
   height: 150px;
+  border-radius: 5px;
   background-color: white;
   border: 1px solid black;
   transition: all 0.5s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
-.dropdownContent:hover{
+
+.dropdownContent, 
+.dropdown a {
+  margin-left: 5px;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdownContent:hover, 
+.dropdown a:hover {
   transition: all 0.2s ease-in-out;
-  color: lightcoral;
+  color: rgba(252, 60, 70);
 }
